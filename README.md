@@ -71,11 +71,11 @@ Real-Time-Face-Mask-Detector/
 git clone https://github.com/HaseebQaisar145/Real-Time-Face-Mask-Detector.git
 
 ### Create Virtual Environment
-python -m venv venv
+python -m venv yolo
 
 ### Activate Environment
 Windows:
-venv\Scripts\activate
+yolo\Scripts\activate
 
 ### Install Dependencies
 pip install -r requirements.txt
