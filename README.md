@@ -1,48 +1,122 @@
-# Real-Time-Face-Mask-Detector
-Real-time Face Mask Detection system using YOLO, FastAPI, WebSocket, OpenCV, and ONNX with live webcam streaming.
 
+# Real-Time Face Mask Detector using YOLO, ONNX, FastAPI & WebSocket
 
-# 😷 Real-Time Face Mask Detector (YOLO + FastAPI)
+## Project Overview
+This project implements a real-time face mask detection system using the Ultralytics YOLO object detection framework. 
+The system detects whether a person is wearing a face mask or not using a webcam video stream.
 
-A real-time AI-powered Face Mask Detection system built using **Ultralytics YOLO**, **FastAPI**, **WebSocket**, **OpenCV**, and **ONNX**.  
-The application detects whether a person is wearing a mask or not from a live webcam feed and streams the detection results directly to a web interface in real time.
+The trained YOLO model is exported to ONNX format for optimized CPU inference. 
+The backend is built using FastAPI and WebSocket for real-time frame streaming, while the frontend displays live annotated video with bounding boxes and labels.
 
 ---
 
-## 🚀 Features
-
+## Features
 - Real-time face mask detection
-- Live webcam streaming
-- YOLO object detection model
-- FastAPI backend server
-- WebSocket-based real-time communication
-- ONNX model optimization for CPU inference
-- Bounding box and confidence score visualization
-- Lightweight frontend using HTML + JavaScript
+- YOLOv8-based object detection
+- ONNX optimized inference for CPU
+- FastAPI backend
+- WebSocket real-time communication
+- HTML/CSS frontend
+- Webcam live video streaming
+- Bounding box visualization
 
 ---
 
-## 🛠️ Tech Stack
-
-### Backend
-- Python
-- FastAPI
-- WebSocket
-- OpenCV
-- Ultralytics YOLO
-
-### Frontend
-- HTML
-- CSS
-- JavaScript
-
-### AI / Deep Learning
-- YOLOv8
-- ONNX Runtime
+## Technologies Used
+| Technology | Purpose |
+|------------|---------|
+| Ultralytics YOLOv8 | Object Detection |
+| ONNX | CPU-Optimized Inference |
+| FastAPI | Backend API |
+| WebSocket | Real-Time Streaming |
+| OpenCV | Webcam Frame Processing |
+| HTML/CSS | Frontend UI |
+| Python | Core Programming Language |
 
 ---
 
+## Project Workflow
+1. Train YOLOv8 model on face mask dataset
+2. Validate model performance
+3. Export trained model to ONNX format
+4. Create FastAPI backend
+5. Implement WebSocket streaming
+6. Capture webcam frames using OpenCV
+7. Run YOLO inference on frames
+8. Draw bounding boxes and labels
+9. Send processed frames to frontend
+10. Display live video stream in browser
 
+---
+
+## Project Structure
+Real-Time-Face-Mask-Detector/
+│
 ├── app.py
+├── best.onnx
 ├── requirements.txt
-└── README.md
+├── README.md
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   └── style.css
+
+---
+
+## Installation
+
+### Clone Repository
+git clone https://github.com/HaseebQaisar145/Real-Time-Face-Mask-Detector.git
+
+### Create Virtual Environment
+python -m venv venv
+
+### Activate Environment
+Windows:
+venv\Scripts\activate
+
+### Install Dependencies
+pip install -r requirements.txt
+
+---
+
+## Run the Project
+
+### Start FastAPI Server
+uvicorn app:app --reload
+
+### Open Browser
+http://127.0.0.1:8000
+
+---
+
+## Model Details
+- Model: YOLOv8 Nano
+- Framework: Ultralytics
+- Export Format: ONNX
+- Inference Device: CPU
+- Detection Classes:
+  - mask
+  - no_mask
+
+---
+
+## Real-Time Pipeline
+Webcam → YOLO ONNX Model → FastAPI → WebSocket → HTML Frontend
+
+---
+
+## Future Improvements
+- Improve FPS performance
+- Docker deployment
+- Multi-camera support
+- Cloud deployment
+- Mobile optimization
+
+---
+
+## Author
+Haseeb Qaiser
+

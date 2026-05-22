@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Real-Time Face Mask Detector</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h2 {
+            margin-top: 20px;
+        }
+
+        img {
+            border: 3px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Real-Time Face Mask Detection (YOLO + FastAPI)</h2>
+    <img id="video" width="640">
+
+    <script>
+        const ws = new WebSocket("ws://localhost:8000/ws");
+
+        ws.onmessage = function (event) {
+            document.getElementById("video").src =
+                "data:image/jpeg;base64," + event.data;
+        };
+
+        ws.onclose = function () {
+            console.log("WebSocket closed");
+        };
+    </script>
+</body>
+
+</html>
